@@ -10,6 +10,8 @@ const {PostType, argsAddPost} = require("./post");
 const {CommentType, argsAddComment} = require("./comment");
 const {ReplyType, argsAddReply} = require("./reply");
 const {LikeType, argsAddLike} = require("./like");
+
+
 const RootQueryType = new GraphQLObjectType({
     name: "Mutations",
     description: "Root Mutation",

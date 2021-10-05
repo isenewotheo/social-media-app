@@ -1,23 +1,27 @@
-const { GraphQLObjectType } = require("graphql");
-const gPT = require("./graphPrimitiveTypes");
+const {
+    GraphQLString,
+    GraphQLNonNull,
+    GraphQLInt,
+    GraphQLObjectType 
+} = require("graphql");
 
 const LikeType = new GraphQLObjectType({
     name: "Like",
     description: "A single like",
     fields: () => ({
-        _id: gPT.nNST,
-        userID: gPT.nNST,
-        postID: gPT.nNST,
-        type: gPT.nNST,
-        date: gPT.nNST,
-        modified: gPT.nNST,
+        _id: {type: GraphQLNonNull(GraphQLString)},
+        userID: {type: GraphQLNonNull(GraphQLString)},
+        postID: {type: GraphQLNonNull(GraphQLString)},
+        type: {type: GraphQLNonNull(GraphQLString)},
+        date: {type: GraphQLNonNull(GraphQLString)},
+        modified: {type: GraphQLNonNull(GraphQLString)},
     })
 })
 
 const argsAddLike = {
-    userID: gPT.nNST,
-    postID: gPT.nNST,
-    type: gPT.nNST
+    userID: {type: GraphQLNonNull(GraphQLString)},
+    postID: {type: GraphQLNonNull(GraphQLString)},
+    type: {type: GraphQLNonNull(GraphQLString)}
 }
 
 module.exports = {LikeType, argsAddLike};

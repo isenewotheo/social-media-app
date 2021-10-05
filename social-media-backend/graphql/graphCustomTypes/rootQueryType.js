@@ -6,7 +6,7 @@ const {
 } = require("graphql");
 const query = require("../../db");
 const Query = new query();
-// Types import
+
 const {PostType} = require("./post");
 const {CommentType} = require("./comment");
 
