@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Amet sapiente aliquam ducimus dolorem est maxime nisi perspiciatis voluptatibus dolores nesciunt beatae, deserunt eveniet quibusdam optio rerum, animi soluta assumenda corrupti!
+    <div class="box">
+        <h1>This is the query</h1>
+        <button id="query">send query</button>
+    </div>
+    <script>
+        let btn = document.querySelector("#query");
+        let box = document.querySelector(".box");
+        console.log(box);
+        console.log(btn);
+        btn.addEventListener("click",async e => {
+            box.innerHTML += await
+            fetch("/graphql", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                    "Accept": "application/json"
+                },
+                body: JSON.stringify({
+                    query: `{
+                        posts {
+                            _id, 
+                            title,
+                            body
+                        },
+                        author {
+                            name,
+                            id,
+                        }
+                    }`
+                })
+            }).then(res => res.json())
+            .then(data => {
+                console.log(data.data)
+                return data.data.posts[0].body
+            })
+        })
+    </script>
+</body>
+</html>

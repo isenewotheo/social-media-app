@@ -1,0 +1,430 @@
+* {
+    box-sizing: border-box;
+    margin: 0%;
+    padding: 0%;
+}
+ :root {
+    --red: rgb(255, 47, 47);
+    --gray: rgb(194, 193, 193);
+    --header-height: 55px;
+    --sidenav-width: 220px;
+    --primary: rgb(2, 128, 2);
+    --primary-light: rgb(149, 248, 149);
+    --primary-lighter: rgb(199, 255, 199);
+ }
+
+h1,h2,h3,h4,h5,h6 {
+    margin: 0%;
+    padding: 5px;
+    width: 100%;
+    text-align: center;
+    font-weight: 500;
+    color: var(--primary);
+    text-transform: capitalize;
+}
+
+main {
+    margin: auto;
+    margin-left: var(--sidenav-width);
+    margin-top: var(--header-height);
+}
+.main {
+    padding: 0px;
+    max-width: 600px;
+    margin: 20px auto;
+}
+.flex {
+    display: flex;
+    justify-content: space-between;
+}
+body {
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: #2c3e50;
+  margin-top: 0px;
+  padding-top: 0%
+}
+.link {
+    color: var(--primary);
+    text-decoration: none;
+}
+.page-heading {
+    border: 2px solid var(--primary);
+    border-radius: 8px;
+}
+.page-heading-svg {
+    fill: var(--primary);
+    width: 30px;
+}
+
+
+
+
+
+/* ----------- Header ------------ */
+.toogle-sidenav {
+    display: none;
+    margin-top: 3px;
+    height: 40px;
+    width: 37px;
+    font-weight: 700;
+    /* padding-top: 4px; */
+    font-size: 1.55rem;
+    cursor: pointer;
+}
+header {
+    width: 100%;
+    background-color: white;
+    text-align: center;
+    position: fixed;
+    top: 0%;
+    left: 0px;
+    height: var(--header-height);
+    color: var(--primary);
+    z-index: 3;
+    box-shadow: 1px 1px 8px black;
+}
+.nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px;
+    list-style: none;
+}
+.header-profile {
+    margin-top: 0%;
+}
+
+.top-nav {
+    width: 100%;
+    max-width: 720px;
+    margin: auto;
+    height: 100%;
+    display: flex;
+    list-style: none;
+    justify-content: space-between;
+}
+.top-nav-link {
+    width: 40px;
+    padding-top: 3px;
+    height: 40px;
+}
+.top-nav-svg {
+    fill: var(--primary);
+    padding: 6px;
+    background-color: transparent;
+    width: 36px;
+    cursor: pointer;
+}
+.reduce {
+    margin-top: 3px;
+    width: 30px;
+}
+.top-nav-link .nuxt-link-exact-active {
+    display: block;
+    height: 100%;
+    border-radius: 10%;
+    background-color: var(--primary-light);
+}
+
+
+
+
+/* ------------------ Search ------------- */
+.search {
+    height: 30px;
+    max-width: 300px;
+}
+.search input {
+    background-color: var(--gray);
+    height: 35px;
+    max-width: 300px;
+    padding: 0px 6px;
+    color: white;
+    border-radius: 10px;
+    box-shadow: 1px 1px 6px gray, inset 1px 1px 4px rgb(231, 231, 231);
+}
+.search input:focus {
+    outline-width: 2px;
+    outline-color: var(--primary);
+
+}
+.search input::placeholder {
+    color: white;
+}
+
+
+
+/* ------------------sidenav ------------- */
+.sidenav {
+    background-color: white;
+    padding: 20px;
+    z-index: 2;
+    padding-top: var(--header-height);
+    padding-top: 66px;
+    width: var(--sidenav-width);
+    height: 100%;
+    overflow: auto;
+    position: fixed;
+    transition: all 200ms;
+    top: 0%;
+    left: 0px;
+    box-shadow: 2px 2px 8px gray;
+}
+.logo-wrapper {
+    padding-top: 5px;
+    display: flex; 
+    width: 150px;
+}
+#logo {
+    width: 36px;
+    height: 42px;
+}
+#logo-text {
+    padding-top: 14px;
+    overflow: hidden;
+    text-align: left;
+    font-size: 1.1rem;
+    color: var(--primary);
+}
+.sidenav .logo-wrapper {
+    display: none;
+}
+.sidenav-links {
+    margin-top: 10px;
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+.sidenav-link {
+    margin: 7px 0px;
+    padding: 0px;
+    height: 38px;
+    border-radius: 3px;
+    color: var(--primary);
+    text-transform: capitalize;
+    transition: all 300ms;
+}
+.sidenav-links .nuxt-link-exact-active {
+    font-weight: bold;
+    background-color: var(--primary-lighter);
+}
+.sidenav .search {
+    display: none;
+}
+.sidenav-link:hover {
+    font-weight: bold;
+    background-color: var(--primary-lighter);
+}
+.sidenav-link .nxt {
+    border-radius: 3px;
+    color: var(--primary);
+    text-decoration: none;
+    height: 100%;
+    display: block;
+    padding: 8px;
+}
+
+
+
+/* ------------------Posts ------------- */
+.posts {
+    padding: 10px;
+}
+.post{
+    max-width: 600px;
+    margin: 20px auto;
+    height: auto;
+    border-radius: 7px;
+    box-shadow: 1px 1px 5px gray;
+}
+.post-svg {
+    width: 30px;
+    cursor: pointer;
+}
+.post-header{
+    position: relative;
+    border-bottom: 1px solid rgb(204, 203, 203);
+    border-radius: 7px 7px 2px 2px;
+    width: 100%;
+    padding: 10px;
+}
+.profile-link {
+    display: flex
+}
+.username {
+    font-weight: bold;
+    color: var(--primary);
+    margin-left: 5px
+}
+.avatar {
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+    display: block;
+    border-radius: 50%;
+    border: 2px solid var(--primary);
+}
+.post-svg{
+    fill: var(--primary);
+}
+.launch-post-menu {
+    position: absolute;
+    top: 0px;
+    right: 10px;
+    font-size: 1.8rem;
+    cursor: pointer;
+    width: 30px;
+    color: var(--primary);
+    height: 30px;
+    border-radius: 50%;
+}
+.post-meta {
+    display: flex;
+    font-size: .71rem;
+    font-weight: 700;
+    color: var(--primary);
+    width: 120px;
+    justify-content: space-between;
+    margin-bottom: -6px;
+    margin-top: 5px;
+    margin-left: 5px;
+}
+.post-body{
+    padding: 10px;
+}
+.post-footer {
+    padding: 10px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+
+
+
+/* --------- Notifications ---------- */
+.notification {
+    padding: 9px;
+    height: 50px;
+    overflow: hidden;
+    background-color: var(--primary-lighter);
+    margin: 0px;
+    border-bottom: 1px solid gray;
+}
+.unread-notification {
+    font-weight: 600;
+    background-color: gray;
+    background-color: var(--primary-light);
+}
+
+
+
+
+
+/* --------- Messages ---------- */
+.user-message {
+    background-color: transparent;
+    padding: 5px;
+    font-size: .8rem;
+    border: 1px solid gray;
+}
+.user-message .avatar {
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+    display: block;
+    border-radius: 50%;
+    margin-top: 6px;
+    margin-right: 5px;
+}
+.user-message .username {
+    margin-right: 10px;
+}
+.activity {
+    color: green;
+    color: rgb(87, 87, 87);
+    font-weight: 600;
+}
+.online {
+    border: 2px solid green;
+}
+.offline {
+    border: none;
+}
+
+
+
+
+
+
+/* --------- userprofile ---------- */
+.profile-header {
+    position: relative;
+}
+.cover-photo {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    position: absolute;
+    top: var(--header-height);
+    top: 0%;
+    left: 0px;
+    border-bottom: 4px solid var(--primary-light);
+}
+.profile-picture {
+    width: 180px;
+    object-fit: cover;
+    height: 180px;
+    border-radius: 50%;
+    position: absolute;
+    top: 50px;
+    left: calc(50% - 100px);
+    display: block;
+    margin: auto;
+    z-index: 5;
+    border: 3px solid var(--primary-light);
+}
+.profile-username {
+    width: 100%;
+    padding-top: 240px;
+    color: var(--primary);
+    font-size: 2rem;
+    text-transform: capitalize;
+    text-align: center;
+}
+
+
+
+
+
+/* --------- media queries ---------- */
+@media (max-width:700px) {
+    main {
+        margin-left: 0%;
+    }
+    .toogle-sidenav {
+        display: block;
+    }
+    .top-nav .search {
+        display: none;
+    }
+    .sidenav .search {
+        display: block;
+        margin-top: 8px;
+    }
+}
+@media (max-width:500px) {
+    .sidenav .logo-wrapper {
+        display: block;
+        padding-top: 0px;
+        margin-top: -4px;
+        margin-bottom: 5px;
+        display: flex; 
+        width: auto;
+    }
+    .logo-wrapper {
+        display: none;
+    }
+}
