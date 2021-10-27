@@ -16,7 +16,7 @@ GET http://localhost:8080/graphql HTTP/1.1
 Content-Type: application/json
 
 {
-    "query": "{posts {_id, title, date}}"
+    "query": "{getPosts {_id, body, date}}"
 }
 
 

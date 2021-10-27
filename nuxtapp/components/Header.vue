@@ -21,29 +21,29 @@
                         <svg class="top-nav-svg reduce" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M448 0H64C28.7 0 0 28.7 0 64v288c0 35.3 28.7 64 64 64h96v84c0 9.8 11.2 15.5 19.1 9.7L304 416h144c35.3 0 64-28.7 64-64V64c0-35.3-28.7-64-64-64z"/></svg>
                     </nuxt-link>
                 </li>
-                <li class="top-nav-link">
+                <!-- <li class="top-nav-link">
                     <nuxt-link to="/videos">
                         <svg class="top-nav-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path d="M336.2 64H47.8C21.4 64 0 85.4 0 111.8v288.4C0 426.6 21.4 448 47.8 448h288.4c26.4 0 47.8-21.4 47.8-47.8V111.8c0-26.4-21.4-47.8-47.8-47.8zm189.4 37.7L416 177.3v157.4l109.6 75.5c21.2 14.6 50.4-.3 50.4-25.8V127.5c0-25.4-29.1-40.4-50.4-25.8z"/></svg>
                     </nuxt-link>
-                </li>
+                </li> -->
                 <li class="top-nav-link">
                     <nuxt-link to="/notifications">
                         <svg xmlns="http://www.w3.org/2000/svg"  class="top-nav-svg reduce" viewBox="0 0 448 512"><path d="M224 512c35.32 0 63.97-28.65 63.97-64H160.03c0 35.35 28.65 64 63.97 64zm215.39-149.71c-19.32-20.76-55.47-51.99-55.47-154.29 0-77.7-54.48-139.9-127.94-155.16V32c0-17.67-14.32-32-31.98-32s-31.98 14.33-31.98 32v20.84C118.56 68.1 64.08 130.3 64.08 208c0 102.3-36.15 133.53-55.47 154.29-6 6.45-8.66 14.16-8.61 21.71.11 16.4 12.98 32 32.1 32h383.8c19.12 0 32-15.6 32.1-32 .05-7.55-2.61-15.27-8.61-21.71z"/></svg>
                     </nuxt-link>
                 </li>
                 <li class="toogle-sidenav" @click="$emit('toogle')" >&#9776;</li>
-                <Search />
+                <SearchForm />
             </ul>
         </ul>
     </header>
 </template>
 
 <script>
-import Search from '~/components/Search.vue';
+import SearchForm from '~/components/SearchForm.vue';
 export default {
     name: "Header",
     components: {
-        Search
+        SearchForm
     },
     props: {
         sidenavState: {
@@ -55,9 +55,3 @@ export default {
 
 }
 </script>
-
-<style scoped>
-.profile-link {
-    padding-top: 5px;
-}
-</style>

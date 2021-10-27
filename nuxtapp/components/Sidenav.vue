@@ -10,7 +10,7 @@
                 <div class="username">@dummy</div>
             </div>
         </div>
-        <Search />
+        <SearchForm />
         <ul class="sidenav-links">
             <li class="sidenav-link">
                 <nuxt-link class="nxt" to="/">home</nuxt-link>
@@ -32,11 +32,11 @@
 </template>
 
 <script>
-import Search from '~/components/Search.vue';
+import SearchForm from '~/components/SearchForm.vue';
 export default {
     name: "Sidenav",
     components: {
-        Search
+        SearchForm
     },
     props: {
         sidenavState: {

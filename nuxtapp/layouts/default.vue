@@ -1,5 +1,5 @@
 <template>
-<div>
+<v-app>
   <Header :sidenav-state=sidenavState @toogle="toogleSidenav" />
   <Sidenav :sidenav-state=sidenavState />
   <main>
@@ -7,7 +7,7 @@
       <nuxt />
     </div>
   </main>
-</div>
+</v-app>
 </template>
 
 <script>
@@ -32,6 +32,7 @@ export default {
   mounted() {
     this.adjustSidenav();
     window.addEventListener("resize", this.adjustSidenav);
+    this.$vuetify.theme.dark = false;
   },
   methods: {
       toogleSidenav() {

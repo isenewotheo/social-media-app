@@ -76,17 +76,14 @@
   </v-row> -->
 
     <div class="posts">
-        <Post />
-        <Post />
-        <Post />
+        <Posts />
     </div>
 </template>
 
 <script>
-import Post from '~/components/Post.vue';
+import Posts from '~/components/Posts.vue';
 export default {
-    name: "Posts",
-    components: {Post},
+    components: {Posts},
     computed: {
       count() {
         return this.$store.state.count
